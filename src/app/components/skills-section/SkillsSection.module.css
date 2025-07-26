@@ -79,24 +79,24 @@
 }
 
 @media (width <= 1024px) {
-  .skills-section {
-    h1 {
-      text-align: center;
-    }
-  }
-
-  .skills-card {
-    width: 224px;
-  }
-}
-
-@media (width <= 768px) {
   .skill-cards {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
     margin: 0 auto;
   }
 
+  .skills-card {
+    width: 60vw;
+  }
+
+  .skills-section {
+    h1 {
+      text-align: center;
+    }
+  }
+}
+
+@media (width <= 768px) {
   .skills-card {
     width: 80vw;
   }

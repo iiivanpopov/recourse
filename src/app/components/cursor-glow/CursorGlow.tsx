@@ -8,6 +8,10 @@ import styles from './CursorGlow.module.css'
 
 export const CursorGlow = () => {
   const { absoluteX, absoluteY } = useCursorPosition()
+  const isMobile =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    )
 
   const [{ xy }, api] = useSpring(() => ({
     xy: [0, 0],
@@ -20,6 +24,8 @@ export const CursorGlow = () => {
   useEffect(() => {
     api.start({ xy: [absoluteX - 250, absoluteY - 250] })
   }, [absoluteX, absoluteY])
+
+  if (isMobile) return null
 
   return (
     <div className={styles.glowContainer}>

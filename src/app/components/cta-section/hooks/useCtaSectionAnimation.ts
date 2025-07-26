@@ -3,14 +3,17 @@ import { easings, useTransition } from '@react-spring/web'
 const baseAnimationConfig = {
   from: {
     opacity: 0,
+    scale: 0,
     transform: 'translateY(-80px)'
   },
   enter: {
     opacity: 1,
+    scale: 1,
     transform: 'translateY(0px)'
   },
   leave: {
     opacity: 0,
+    scale: 0,
     transform: 'translateY(-80px)'
   },
   config: {
@@ -23,21 +26,13 @@ export const useCtaSectionAnimation = (
   intersectionRatio: number,
   iconIntersectionRation: number
 ) => {
-  const showTitle = intersectionRatio >= 0.95
-  const showSubtitle = intersectionRatio >= 0.87
-  const showDescription = intersectionRatio >= 0.67
-  const showButtons = intersectionRatio >= 0.5
-  const showIcon = iconIntersectionRation >= 0.5
+  const showTitle = intersectionRatio >= 0.9
+  const showSubtitle = intersectionRatio >= 0.88
+  const showDescription = intersectionRatio >= 0.6
+  const showButtons = intersectionRatio >= 0.34
+  const showIcon = iconIntersectionRation >= 0.4
 
-  const titleTransition = useTransition(showTitle, {
-    ...baseAnimationConfig,
-    enter: {
-      ...baseAnimationConfig.enter,
-      delay: 50
-    }
-  })
-
-  const subtitleTransition = useTransition(showSubtitle, {
+  const glow1Transition = useTransition(showTitle, {
     ...baseAnimationConfig,
     enter: {
       ...baseAnimationConfig.enter,
@@ -45,7 +40,23 @@ export const useCtaSectionAnimation = (
     }
   })
 
-  const descriptionTransition = useTransition(showDescription, {
+  const glow2Transition = useTransition(showDescription, {
+    ...baseAnimationConfig,
+    enter: {
+      ...baseAnimationConfig.enter,
+      delay: 100
+    }
+  })
+
+  const titleTransition = useTransition(showTitle, {
+    ...baseAnimationConfig,
+    enter: {
+      ...baseAnimationConfig.enter,
+      delay: 100
+    }
+  })
+
+  const subtitleTransition = useTransition(showSubtitle, {
     ...baseAnimationConfig,
     enter: {
       ...baseAnimationConfig.enter,
@@ -53,7 +64,7 @@ export const useCtaSectionAnimation = (
     }
   })
 
-  const button1Transition = useTransition(showButtons, {
+  const descriptionTransition = useTransition(showDescription, {
     ...baseAnimationConfig,
     enter: {
       ...baseAnimationConfig.enter,
@@ -61,7 +72,7 @@ export const useCtaSectionAnimation = (
     }
   })
 
-  const button2Transition = useTransition(showButtons, {
+  const button1Transition = useTransition(showButtons, {
     ...baseAnimationConfig,
     enter: {
       ...baseAnimationConfig.enter,
@@ -69,11 +80,19 @@ export const useCtaSectionAnimation = (
     }
   })
 
+  const button2Transition = useTransition(showButtons, {
+    ...baseAnimationConfig,
+    enter: {
+      ...baseAnimationConfig.enter,
+      delay: 300
+    }
+  })
+
   const iconTransition = useTransition(showIcon, {
     ...baseAnimationConfig,
     enter: {
       ...baseAnimationConfig.enter,
-      delay: 275
+      delay: 300
     }
   })
 
@@ -83,6 +102,8 @@ export const useCtaSectionAnimation = (
     descriptionTransition,
     button1Transition,
     button2Transition,
-    iconTransition
+    iconTransition,
+    glow1Transition,
+    glow2Transition
   }
 }

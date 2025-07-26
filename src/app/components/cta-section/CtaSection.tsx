@@ -2,7 +2,7 @@ import { animated } from '@react-spring/web'
 import { FormattedMessage } from 'react-intl'
 
 import { useIntersectionRatio } from '@/shared/hooks'
-import { AnimatedButton, AnimatedTypography, Glow } from '@/shared/ui'
+import { AnimatedButton, AnimatedGlow, AnimatedTypography } from '@/shared/ui'
 
 import { AnimatedSection } from '../section'
 import { AnimatedReactIcon } from './components/animated-react-icon'
@@ -21,13 +21,30 @@ export const CtaSection = () => {
     descriptionTransition,
     button1Transition,
     button2Transition,
-    iconTransition
+    iconTransition,
+    glow1Transition,
+    glow2Transition
   } = useCtaSectionAnimation(intersectionRatio, iconIntersectionRatio)
 
   return (
     <AnimatedSection className={styles.section}>
-      <Glow className={styles.blob1} />
-      <Glow className={styles.blob2} />
+      {glow1Transition((props, item) =>
+        item ? (
+          <AnimatedGlow
+            className={styles.blob1}
+            style={props}
+          />
+        ) : null
+      )}
+      {glow2Transition((props, item) =>
+        item ? (
+          <AnimatedGlow
+            className={styles.blob2}
+            style={props}
+          />
+        ) : null
+      )}
+
       <div className={styles.content}>
         <div
           ref={ref}
@@ -108,7 +125,7 @@ export const CtaSection = () => {
               <animated.div style={style}>
                 <AnimatedReactIcon
                   className={styles.reactIcon}
-                  delay={750}
+                  delay={100}
                   size={512}
                 />
               </animated.div>

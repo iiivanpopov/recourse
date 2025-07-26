@@ -21,7 +21,7 @@ export const App = () => {
         >
           <FormattedMessage id='course.title' />
         </Typography>
-        <div className={styles.footer__language}>
+        <div className={styles.language}>
           <Typography
             tag='div'
             variant='heading'
@@ -29,7 +29,7 @@ export const App = () => {
             <FormattedMessage id='information.language' />
           </Typography>
         </div>
-        <div className={styles.footer__contacts}>
+        <div className={styles.contacts}>
           <Typography
             tag='div'
             variant='heading'
