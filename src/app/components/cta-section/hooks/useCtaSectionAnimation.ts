@@ -26,8 +26,8 @@ export const useCtaSectionAnimation = (
   intersectionRatio: number,
   iconIntersectionRation: number
 ) => {
-  const showTitle = intersectionRatio >= 0.9
-  const showSubtitle = intersectionRatio >= 0.88
+  const showTitle = intersectionRatio >= 0.8
+  const showSubtitle = intersectionRatio >= 0.75
   const showDescription = intersectionRatio >= 0.6
   const showButtons = intersectionRatio >= 0.34
   const showIcon = iconIntersectionRation >= 0.4

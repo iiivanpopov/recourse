@@ -19,7 +19,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
   width: 100%;
   height: 50vh;
 }
@@ -27,7 +26,6 @@
 .text {
   display: flex;
   flex-direction: column;
-  gap: 20px;
   min-height: 25vh;
 }
 
@@ -46,7 +44,7 @@
 .subtitle {
   display: flex;
   align-items: center;
-  min-height: 4vh;
+  min-height: 5vh;
 }
 
 .react-icon,
@@ -107,10 +105,6 @@
     min-height: 25vh;
   }
 
-  .title {
-    min-height: 5vh;
-  }
-
   .subtitle {
     min-height: 4vh;
   }
@@ -126,12 +120,8 @@
     min-height: 30vh;
   }
 
-  .title {
-    min-height: 5vh;
-  }
-
   .subtitle {
-    min-height: 6vh;
+    min-height: 7vh;
   }
 
   .react-icon,
@@ -158,15 +148,11 @@
   }
 
   .text {
-    min-height: 35vh;
-  }
-
-  .title {
-    min-height: 6vh;
+    min-height: 45vh;
   }
 
   .subtitle {
-    min-height: 7vh;
+    min-height: 10vh;
   }
 
   .actions {
@@ -175,5 +161,11 @@
 
   .actions > button {
     width: 100%;
+  }
+}
+
+@media (width <= 384px) {
+  .text {
+    min-height: 45vh;
   }
 }
