@@ -1,0 +1,173 @@
+.blob1 {
+  top: 150px;
+  left: -200px;
+}
+
+.blob2 {
+  top: 250px;
+  left: 350px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50vh;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 25vh;
+}
+
+.actions {
+  display: flex;
+  gap: 20px 40px;
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  height: 5vh;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  height: 4vh;
+}
+
+.react-icon,
+.icon-wrapper {
+  width: 512px;
+  height: 512px;
+  color: var(--info);
+}
+
+@media (width <= 1280px) {
+  .content {
+    align-items: center;
+    padding: 20px;
+  }
+
+  .text {
+    height: 23vh;
+  }
+
+  .react-icon,
+  .icon-wrapper {
+    width: 384px;
+    height: 384px;
+  }
+}
+
+@media (width <= 1024px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+
+  .cta {
+    order: 2;
+    height: fit-content;
+    min-height: 30vh;
+    padding: 0;
+  }
+
+  .react-icon,
+  .icon-wrapper {
+    width: 512px;
+    height: 512px;
+  }
+
+  .blob1 {
+    top: 400px;
+  }
+
+  .blob2 {
+    top: 550px;
+  }
+}
+
+@media (width <= 768px) {
+  .text {
+    height: 30vh;
+  }
+
+  .title {
+    height: 6vh;
+  }
+
+  .subtitle {
+    height: 7vh;
+  }
+
+  .blob2 {
+    top: 550px;
+    left: 200px;
+  }
+}
+
+@media (width <= 640px) {
+  .text {
+    height: 35vh;
+  }
+
+  .title {
+    height: 6vh;
+  }
+
+  .subtitle {
+    height: 7vh;
+  }
+
+  .react-icon,
+  .icon-wrapper {
+    width: 384px;
+    height: 384px;
+  }
+}
+
+@media (width <= 512px) {
+  .blob1 {
+    top: 200px;
+  }
+
+  .blob2 {
+    top: 600px;
+    left: 100px;
+  }
+
+  .text {
+    height: 40vh;
+  }
+
+  .title {
+    height: 6vh;
+  }
+
+  .subtitle {
+    height: 7vh;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions > button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,136 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 280px;
+}
+
+/* Base input styles */
+.input {
+  width: 280px;
+  height: 40px;
+  padding: 5px 15px;
+  border: 2px solid var(--text-secondary);
+  border-radius: 10px;
+  outline: none;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  transition: border-color 0.25s ease-in-out;
+  cursor: text;
+}
+
+.input:hover {
+  border-color: var(--accent);
+}
+
+.input:focus {
+  border-color: var(--accent-dark);
+}
+
+.input::placeholder {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--text-muted);
+}
+
+/* Input variations */
+.input.underlined {
+  border: none;
+  border-bottom: 2px solid var(--text-secondary);
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.input.underlined:hover {
+  border-bottom-color: var(--accent);
+}
+
+.input.underlined:focus {
+  border-bottom-color: var(--accent-dark);
+}
+
+.input.ghost {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.input.ghost:hover,
+.input.ghost:focus {
+  border: none;
+  background-color: transparent;
+}
+
+/* Input states */
+.input.input-disabled {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+  background-color: var(--bg-tertiary);
+  cursor: default;
+}
+
+.input.input-disabled:hover,
+.input.input-disabled:focus {
+  border-color: var(--text-muted);
+  color: var(--text-muted);
+  background-color: var(--bg-tertiary);
+}
+
+.input.input-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: transparent;
+}
+
+.input.input-loading:hover,
+.input.input-loading:focus,
+.input.input-loading::placeholder {
+  color: transparent;
+}
+
+/* Variations in loading and disabled states */
+.input.underlined.input-loading,
+.input.underlined.input-disabled,
+.input.ghost.input-loading,
+.input.ghost.input-disabled {
+  background-color: transparent;
+}
+
+/* Loading icon */
+.loading-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform-origin: center center;
+  animation: spin 0.8s linear infinite;
+  stroke: var(--text-muted);
+}
+
+/* Input validation states */
+.input.input-error {
+  border-color: var(--error);
+}
+
+.input.input-valid {
+  border-color: var(--success);
+}
+
+/* Error message */
+.error {
+  color: var(--error) !important;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
