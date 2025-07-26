@@ -20,10 +20,18 @@ html {
 
 body {
   position: relative;
+  -webkit-font-smoothing: antialiased;
+  word-break: break-word;
   overflow-x: hidden;
+<<<<<<< HEAD
   overflow-wrap: anywhere;
   height: 100%;
   hyphens: auto;
+=======
+  height: 100%;
+  hyphens: auto;
+  -moz-osx-font-smoothing: grayscale;
+>>>>>>> 4b737cd (fix: mobile ui. ui enhancements)
   background-color: var(--bg-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
