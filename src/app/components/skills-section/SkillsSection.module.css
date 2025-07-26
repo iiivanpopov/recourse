@@ -60,7 +60,7 @@
   }
 }
 
-@media (max-width: 1280px) {
+@media (width <= 1280px) {
   .skills-section {
     display: flex;
     flex-direction: column;
@@ -78,11 +78,7 @@
   }
 }
 
-<<<<<<< HEAD
 @media (width <= 1024px) {
-=======
-@media (max-width: 1024px) {
->>>>>>> 4b737cd (fix: mobile ui. ui enhancements)
   .skill-cards {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr;
@@ -100,11 +96,7 @@
   }
 }
 
-<<<<<<< HEAD
 @media (width <= 768px) {
-=======
-@media (max-width: 768px) {
->>>>>>> 4b737cd (fix: mobile ui. ui enhancements)
   .skills-card {
     width: 80vw;
   }

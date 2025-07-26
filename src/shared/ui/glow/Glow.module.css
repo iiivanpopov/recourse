@@ -4,8 +4,6 @@
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  pointer-events: none;
-  user-select: none;
   background: radial-gradient(
     circle,
     rgb(0 150 255 / 20%) 0%,
