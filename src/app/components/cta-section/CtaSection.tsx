@@ -4,7 +4,7 @@ import { FormattedMessage } from 'react-intl'
 import { useIntersectionRatio } from '@/shared/hooks'
 import { AnimatedButton, AnimatedGlow, AnimatedTypography } from '@/shared/ui'
 
-import { AnimatedSection } from '../section'
+import { Section } from '../section'
 import { AnimatedReactIcon } from './components/animated-react-icon'
 import { useCtaSectionAnimation } from './hooks/useCtaSectionAnimation'
 
@@ -27,7 +27,7 @@ export const CtaSection = () => {
   } = useCtaSectionAnimation(intersectionRatio, iconIntersectionRatio)
 
   return (
-    <AnimatedSection className={styles.section}>
+    <Section className={styles.section}>
       {glow1Transition((props, item) =>
         item ? (
           <AnimatedGlow
@@ -133,6 +133,6 @@ export const CtaSection = () => {
           )}
         </div>
       </div>
-    </AnimatedSection>
+    </Section>
   )
 }
