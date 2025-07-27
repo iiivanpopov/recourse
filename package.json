@@ -43,10 +43,12 @@
   "lint-staged": {
     "*": [
       "bun format",
-      "bun lint"
+      "bun lint",
+      "git add"
     ],
     "./src/**/*.css": [
-      "bun lint:css"
+      "bun lint:css",
+      "git add"
     ]
   }
 }
