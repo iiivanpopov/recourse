@@ -19,16 +19,16 @@ export const SkillsSection = () => {
       <Glow className={styles.blob3} />
 
       <Typography
-        tag='h1'
         variant='title'
+        tag='h1'
       >
         <FormattedMessage id='skills.title' />
       </Typography>
       <div className={styles.skillCards}>
         <Card className={styles.skillsCard}>
           <Typography
-            tag='div'
             variant='heading'
+            tag='div'
           >
             <FormattedMessage id='skills.react.title' />
           </Typography>
@@ -39,8 +39,8 @@ export const SkillsSection = () => {
                 className={styles.skill}
               >
                 <Typography
-                  tag='div'
                   variant='body'
+                  tag='div'
                 >
                   <FormattedMessage id={`skills.react.${key}`} />
                 </Typography>
@@ -50,8 +50,8 @@ export const SkillsSection = () => {
         </Card>
         <Card className={styles.skillsCard}>
           <Typography
-            tag='div'
             variant='heading'
+            tag='div'
           >
             <FormattedMessage id='skills.typescript.title' />
           </Typography>
@@ -62,8 +62,8 @@ export const SkillsSection = () => {
                 className={styles.skill}
               >
                 <Typography
-                  tag='div'
                   variant='body'
+                  tag='div'
                 >
                   <FormattedMessage id={`skills.typescript.${key}`} />
                 </Typography>
@@ -73,8 +73,8 @@ export const SkillsSection = () => {
         </Card>
         <Card className={styles.skillsCard}>
           <Typography
-            tag='div'
             variant='heading'
+            tag='div'
           >
             <FormattedMessage id='skills.architecture.title' />
           </Typography>
@@ -85,8 +85,8 @@ export const SkillsSection = () => {
                 className={styles.skill}
               >
                 <Typography
-                  tag='div'
                   variant='body'
+                  tag='div'
                 >
                   <FormattedMessage id={`skills.architecture.${key}`} />
                 </Typography>

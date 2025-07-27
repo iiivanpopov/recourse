@@ -44,9 +44,9 @@ export const Input = ({
     <div className={clsx(styles.inputWrapper, className)}>
       {label && (
         <Typography
+          variant='label'
           className={styles.label}
           tag='label'
-          variant='label'
           htmlFor={id}
         >
           {label}
@@ -79,9 +79,9 @@ export const Input = ({
 
       {isError && error && (
         <Typography
+          variant='label'
           className={styles.error}
           tag='div'
-          variant='label'
         >
           {error}
         </Typography>
@@ -89,9 +89,9 @@ export const Input = ({
 
       {hint && !isError && (
         <Typography
+          variant='caption'
           className={styles.hint}
           tag='div'
-          variant='caption'
         >
           {hint}
         </Typography>

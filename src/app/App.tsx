@@ -16,23 +16,23 @@ export const App = () => {
       </main>
       <footer className={styles.footer}>
         <Typography
-          tag='h1'
           variant='title'
+          tag='h1'
         >
           <FormattedMessage id='course.title' />
         </Typography>
         <div className={styles.language}>
           <Typography
-            tag='div'
             variant='heading'
+            tag='div'
           >
             <FormattedMessage id='information.language' />
           </Typography>
         </div>
         <div className={styles.contacts}>
           <Typography
-            tag='div'
             variant='heading'
+            tag='div'
           >
             <FormattedMessage id='information.contacts' />
           </Typography>

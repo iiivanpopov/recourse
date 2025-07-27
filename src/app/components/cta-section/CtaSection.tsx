@@ -55,9 +55,9 @@ export const CtaSection = () => {
               {titleTransition((props, item) =>
                 item ? (
                   <AnimatedTypography
+                    variant='title'
                     style={props}
                     tag='h1'
-                    variant='title'
                   >
                     <FormattedMessage id='course.title' />
                   </AnimatedTypography>
@@ -69,9 +69,9 @@ export const CtaSection = () => {
               {subtitleTransition((props, item) =>
                 item ? (
                   <AnimatedTypography
+                    variant='subtitle'
                     style={props}
                     tag='h2'
-                    variant='subtitle'
                   >
                     <FormattedMessage id='course.subtitle' />
                   </AnimatedTypography>
@@ -83,10 +83,10 @@ export const CtaSection = () => {
               {descriptionTransition((props, item) =>
                 item ? (
                   <AnimatedTypography
+                    variant='body'
                     className={styles.body}
                     style={props}
                     tag='div'
-                    variant='body'
                   >
                     <FormattedMessage id='course.description' />
                   </AnimatedTypography>
@@ -106,8 +106,8 @@ export const CtaSection = () => {
             {button2Transition((props, item) =>
               item ? (
                 <AnimatedButton
-                  style={props}
                   variant='outlined'
+                  style={props}
                 >
                   <FormattedMessage id='button.learn_more' />
                 </AnimatedButton>

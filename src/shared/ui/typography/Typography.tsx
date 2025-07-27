@@ -16,9 +16,9 @@ type Variant =
 
 type TypographyProps<T extends Tag> = {
   children: ReactNode
+  className?: string
   tag?: T
   variant?: Variant
-  className?: string
 } & ComponentPropsWithRef<T>
 
 export const Typography = <T extends Tag = 'div'>({

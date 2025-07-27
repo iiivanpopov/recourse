@@ -27,11 +27,16 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={clsx(styles.button, styles[variant], {
-        [styles.disabled]: isDisabled || isLoading,
-        [styles.active]: isActive && !(isDisabled && isLoading),
-        [styles.loading]: isLoading
-      })}
+      className={clsx(
+        styles.button,
+        styles[variant],
+        {
+          [styles.disabled]: isDisabled || isLoading,
+          [styles.active]: isActive && !(isDisabled && isLoading),
+          [styles.loading]: isLoading
+        },
+        className
+      )}
       type={type}
       {...props}
     >

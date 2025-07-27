@@ -6,7 +6,7 @@ import { LOCALE } from '@/shared/providers'
 const files = import.meta.glob('@/assets/locales/*.json')
 
 export const parseLocale = (): Locale =>
-  (localStorage.getItem(LOCAL_STORAGE.LANGUAGE) as Locale) ?? LOCALE.EN
+  (localStorage.getItem(LOCAL_STORAGE.LANGUAGE) as Locale | null) ?? LOCALE.EN
 
 export const saveLocale = (locale: Locale): Locale => {
   localStorage.setItem(LOCAL_STORAGE.LANGUAGE, locale)

@@ -13,7 +13,7 @@ const thresholds = Array.from({ length: steps + 1 }, (_, i) => i / steps)
 export function useIntersectionRatio<
   T extends Element = HTMLDivElement
 >(): UseIntersectionRatioReturn<T> {
-  const ref = useRef<T>(null!)
+  const ref = useRef<T | null>(null!)
   const [ratio, setRatio] = useState(0)
 
   useEffect(() => {
@@ -34,5 +34,5 @@ export function useIntersectionRatio<
     return () => observer.disconnect()
   }, [])
 
-  return [ref, ratio]
+  return [ref as RefObject<T>, ratio]
 }
