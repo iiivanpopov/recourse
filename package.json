@@ -34,7 +34,7 @@
     "vite": "^7.0.6"
   },
   "lint-staged": {
-    "*": [
+    "*.{ts,tsx}": [
       "bun format",
       "bun lint"
     ],
