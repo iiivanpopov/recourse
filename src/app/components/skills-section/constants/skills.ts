@@ -42,12 +42,12 @@ export const cards: {
     keys: reactSkillsKeys
   },
   {
-    id: 0,
+    id: 1,
     skill: 'typescript',
     keys: typescriptSkillKeys
   },
   {
-    id: 0,
+    id: 2,
     skill: 'architecture',
     keys: architectureSkillKeys
   }

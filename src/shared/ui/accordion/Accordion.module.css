@@ -1,0 +1,32 @@
+.accordion {
+  width: 100%;
+}
+
+.trigger {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.with-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-tertiary);
+  transition: transform 0.3s ease;
+}
+
+.content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}

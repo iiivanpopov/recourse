@@ -25,6 +25,7 @@ body,
 body {
   position: relative;
   overflow-wrap: anywhere;
+  scrollbar-color: transparent transparent;
   height: 100%;
   hyphens: auto;
   background-color: var(--bg-primary);
@@ -60,5 +61,30 @@ svg {
   from {
     opacity: 0;
     transform: translateX(100%);
+  }
+}
+
+::view-transition-old(course),
+::view-transition-new(course) {
+  animation-duration: 0.3s;
+}
+
+::view-transition-old(course) {
+  animation-name: appearance-out;
+}
+
+::view-transition-new(course) {
+  animation-name: appearance-in;
+}
+
+@keyframes appearance-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes appearance-in {
+  from {
+    opacity: 0;
   }
 }

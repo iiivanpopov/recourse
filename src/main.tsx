@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import type { ProvidersProps } from '@/app'
@@ -27,11 +26,9 @@ const init = async () => {
   }
 
   root.render(
-    <StrictMode>
-      <Providers {...providersProps}>
-        <App />
-      </Providers>
-    </StrictMode>
+    <Providers {...providersProps}>
+      <App />
+    </Providers>
   )
 }
 

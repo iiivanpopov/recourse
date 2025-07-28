@@ -35,9 +35,72 @@
   "skills.architecture.testing_strategy": "Testing: unit, e2e, integration tests",
   "skills.architecture.component_decomposition": "Where and how to decompose large components",
 
+  "plan.title": "Course plan",
+  "plan.subtitle": "10 Модулей · Финальный проект · 70+ уроков",
+
   "button.purchase_now": "Purchase Now",
   "button.learn_more": "Learn More",
 
-  "information.contacts": "Contacts",
-  "information.language": "Language"
+  "plan.module1.title": "Введение",
+  "plan.module1.topic1": "Что такое React и зачем нужен TypeScript",
+  "plan.module1.topic2": "Настройка окружения (Vite + TypeScript)",
+  "plan.module1.topic3": "Обзор структуры проекта",
+
+  "plan.module2.title": "Основы React",
+  "plan.module2.topic1": "JSX и функциональные компоненты",
+  "plan.module2.topic2": "Props и useState",
+  "plan.module2.topic3": "Обработка событий и форм",
+  "plan.module2.topic4": "Рендер списков с ключами",
+  "plan.module2.topic5": "useEffect для побочных эффектов",
+  "plan.module2.topic6": "Условный рендеринг",
+
+  "plan.module3.title": "Хуки и логика",
+  "plan.module3.topic1": "useRef, useMemo, useCallback для оптимизации",
+  "plan.module3.topic2": "useReducer для сложного состояния",
+  "plan.module3.topic3": "Context API для общего состояния",
+  "plan.module3.topic4": "Создание кастомных хуков",
+
+  "plan.module4.title": "React Router",
+  "plan.module4.topic1": "Установка и настройка react-router-dom",
+  "plan.module4.topic2": "Основы маршрутизации: Route, Link, useNavigate",
+  "plan.module4.topic3": "Динамические и вложенные маршруты",
+  "plan.module4.topic4": "Ленивая загрузка с React.lazy и Suspense",
+
+  "plan.module5.title": "Основы TypeScript",
+  "plan.module5.topic1": "Аннотации типов, примитивы, массивы, кортежи",
+  "plan.module5.topic2": "type vs interface",
+  "plan.module5.topic3": "Дженерики, enum'ы, объединения и пересечения",
+  "plan.module5.topic4": "Типизация функций, объектов, событий, промисов",
+  "plan.module5.topic5": "Настройка tsconfig.json",
+
+  "plan.module6.title": "TypeScript в React",
+  "plan.module6.topic1": "Типизация props, состояния и событий",
+  "plan.module6.topic2": "Типизация кастомных хуков и редьюсеров",
+  "plan.module6.topic3": "Типизация ответов API и форм",
+  "plan.module6.topic4": "Утилитные типы: Partial, Omit, Record и др.",
+  "plan.module6.topic5": "Обработка и типизация ошибок",
+
+  "plan.module7.title": "Работа с API",
+  "plan.module7.topic1": "Запросы с fetch и axios",
+  "plan.module7.topic2": "Состояния загрузки и ошибок",
+  "plan.module7.topic3": "Кеширование и мутации с react-query",
+  "plan.module7.topic4": "Оптимистичное обновление UI",
+
+  "plan.module8.title": "Формы и валидация",
+  "plan.module8.topic1": "Работа с формами через react-hook-form",
+  "plan.module8.topic2": "Строгая типизация полей форм",
+  "plan.module8.topic3": "Валидация с zod или yup",
+
+  "plan.module9.title": "Архитектура и лучшие практики",
+  "plan.module9.topic1": "Организация файлов: UI, фичи, shared",
+  "plan.module9.topic2": "Разделение ответственности компонентов",
+  "plan.module9.topic3": "Централизация логики: хуки, утилиты",
+  "plan.module9.topic4": "Ленивая загрузка и разделение кода",
+  "plan.module9.topic5": "Чистый, масштабируемый и читаемый код",
+
+  "plan.module10.title": "Тестирование",
+  "plan.module10.topic1": "Настройка Jest и React Testing Library",
+  "plan.module10.topic2": "Рендер и взаимодействие в тестах",
+  "plan.module10.topic3": "Мокинг асинхронного поведения",
+  "plan.module10.topic4": "Тестирование хуков и бизнес-логики"
 }

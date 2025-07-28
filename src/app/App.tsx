@@ -8,6 +8,7 @@ import { ArrowBottomIcon, ArrowTopIcon } from '@/assets/icons'
 import { Button } from '@/shared/ui'
 
 import { CtaSection, SkillsSection } from './components'
+import { PlanSection } from './components/plan-section'
 
 import styles from './App.module.css'
 
@@ -18,11 +19,17 @@ const pages = [
     backgroundClass: styles.background1
   },
   {
-    id: 0,
+    id: 1,
     component: SkillsSection,
     backgroundClass: styles.background2
+  },
+  {
+    id: 2,
+    component: PlanSection,
+    backgroundClass: styles.background3
   }
 ]
+
 const totalPages = pages.length
 
 export const App = () => {
