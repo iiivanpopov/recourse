@@ -59,6 +59,43 @@
   }
 }
 
+.icon {
+  min-width: 56px;
+  min-height: 56px;
+  padding: 12px;
+  border: 2px solid var(--text-primary);
+  color: var(--text-invert);
+  background-color: var(--text-primary);
+
+  &.active {
+    border-color: var(--accent);
+    background-color: var(--accent);
+  }
+
+  &:focus {
+    border: 2px solid var(--accent);
+    color: var(--text-invert);
+    background-color: var(--text-primary);
+  }
+
+  &:hover {
+    border: 2px solid var(--text-primary);
+    color: var(--text-primary);
+    background-color: transparent;
+  }
+
+  &.disabled {
+    border-color: var(--text-tertiary);
+    color: var(--text-muted);
+    background-color: var(--text-tertiary);
+    cursor: default;
+  }
+
+  &.loading {
+    color: transparent;
+  }
+}
+
 .outlined {
   border: 2px solid var(--text-primary);
 

@@ -1,5 +1,4 @@
 export * from './button'
 export * from './card'
-export * from './glow'
 export * from './input'
 export * from './typography'

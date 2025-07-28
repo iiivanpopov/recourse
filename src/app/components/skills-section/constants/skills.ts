@@ -1,4 +1,4 @@
-export const reactSkillKeys = [
+export const reactSkillsKeys = [
   'jsx_and_props',
   'state_management',
   'side_effects',
@@ -29,4 +29,26 @@ export const architectureSkillKeys = [
   'async_state',
   'testing_strategy',
   'component_decomposition'
+]
+
+export const cards: {
+  id: number
+  keys: string[]
+  skill: 'architecture' | 'react' | 'typescript'
+}[] = [
+  {
+    id: 0,
+    skill: 'react',
+    keys: reactSkillsKeys
+  },
+  {
+    id: 0,
+    skill: 'typescript',
+    keys: typescriptSkillKeys
+  },
+  {
+    id: 0,
+    skill: 'architecture',
+    keys: architectureSkillKeys
+  }
 ]

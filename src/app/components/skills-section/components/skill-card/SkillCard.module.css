@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+  padding: 30px 25px;
+  view-transition-name: carousel;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 0 0 25px;
+  list-style-type: none;
+}
+
+.skill {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--text-muted);
+    border-radius: 50%;
+    transform: translate(-225%, -50%);
+    content: '';
+  }
+}

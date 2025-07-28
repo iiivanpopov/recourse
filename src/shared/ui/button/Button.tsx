@@ -12,7 +12,7 @@ interface ButtonProps extends ComponentPropsWithRef<'button'> {
   isActive?: boolean
   isDisabled?: boolean
   isLoading?: boolean
-  variant?: 'contained' | 'outlined'
+  variant?: 'contained' | 'icon' | 'outlined'
 }
 
 export const Button = ({

@@ -1,85 +1,58 @@
 import { animated, useInView } from '@react-spring/web'
 import { FormattedMessage } from 'react-intl'
 
-import { Card, Glow, Typography } from '@/shared/ui'
+import { cards } from '@/app/components/skills-section/constants'
+import { useInViewAnimation } from '@/shared/hooks'
+import { useInViewAnimations } from '@/shared/hooks/useInViewAnimations'
+import { useViewport } from '@/shared/hooks/useViewport'
+import { Typography } from '@/shared/ui'
 
-import { Section } from '../section'
-import {
-  architectureSkillKeys,
-  reactSkillKeys,
-  typescriptSkillKeys
-} from './constants/skills'
-import { useSkillsSectionAnimation } from './hooks/useSkillsSectionAnimation'
+import { CardCarousel, SkillCard } from './components'
 
 import styles from './SkillsSection.module.css'
 
-const cards = [
-  {
-    titleId: 'skills.react.title',
-    keys: reactSkillKeys,
-    baseId: 'skills.react.'
-  },
-  {
-    titleId: 'skills.typescript.title',
-    keys: typescriptSkillKeys,
-    baseId: 'skills.typescript.'
-  },
-  {
-    titleId: 'skills.architecture.title',
-    keys: architectureSkillKeys,
-    baseId: 'skills.architecture.'
-  }
-]
-
 export const SkillsSection = () => {
-  const [ref, inView] = useInView({ amount: 0.4 })
+  const [ref, inView] = useInView({ amount: 0.4, rootMargin: '-20% 0%' })
 
-  const trail = useSkillsSectionAnimation(inView)
+  const cardsTrail = useInViewAnimations(cards.length, inView)
+  const textSpring = useInViewAnimation(inView)
+  const cardCarouselSpring = useInViewAnimation(inView)
+
+  const viewport = useViewport()
 
   return (
-    <Section className={styles.skillsSection}>
-      <Glow className={styles.blob1} />
-      <Glow className={styles.blob2} />
-      <Glow className={styles.blob3} />
-
+    <section
+      ref={ref}
+      className={styles.section}
+    >
+      <animated.div style={textSpring}>
+        <Typography
+          variant='title'
+          tag='h1'
+        >
+          <FormattedMessage id='skills.title' />
+        </Typography>
+      </animated.div>
       <div
-        ref={ref}
-        className={styles.skillCards}
+        className={
+          viewport.width > 1024 ? styles.skillCards : styles.skillCarousel
+        }
       >
-        {trail.map((style, i) => {
-          const { titleId, keys, baseId } = cards[i]
-          return (
+        {viewport.width > 1024 &&
+          cardsTrail.map((style, i) => (
             <animated.div
-              key={titleId}
+              key={cards[i].id}
               style={style}
             >
-              <Card className={styles.skillsCard}>
-                <Typography
-                  variant='heading'
-                  tag='div'
-                >
-                  <FormattedMessage id={titleId} />
-                </Typography>
-                <ul className={styles.skills}>
-                  {keys.map(key => (
-                    <li
-                      key={key}
-                      className={styles.skill}
-                    >
-                      <Typography
-                        variant='body'
-                        tag='div'
-                      >
-                        <FormattedMessage id={`${baseId}${key}`} />
-                      </Typography>
-                    </li>
-                  ))}
-                </ul>
-              </Card>
+              <SkillCard {...cards[i]} />
             </animated.div>
-          )
-        })}
+          ))}
+        {viewport.width <= 1024 && (
+          <animated.div style={cardCarouselSpring}>
+            <CardCarousel />
+          </animated.div>
+        )}
       </div>
-    </Section>
+    </section>
   )
 }

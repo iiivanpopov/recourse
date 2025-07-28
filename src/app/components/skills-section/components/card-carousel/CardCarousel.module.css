@@ -1,0 +1,9 @@
+.carousel {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}

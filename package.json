@@ -13,6 +13,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@react-spring/parallax": "^10.0.1",
     "@react-spring/web": "^10.0.1",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
@@ -23,7 +24,7 @@
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react-swc": "^3.11.0",
-    "@yelaiii/eslint": "0.0.19",
+    "@yelaiii/eslint": "0.0.20",
     "@yelaiii/prettier": "^0.0.4",
     "@yelaiii/stylelint": "^0.0.5",
     "eslint": "^9.32.0",

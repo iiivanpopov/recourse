@@ -4,6 +4,7 @@
     "": {
       "name": "recourse",
       "dependencies": {
+        "@react-spring/parallax": "latest",
         "@react-spring/web": "latest",
         "clsx": "latest",
         "react": "latest",
@@ -193,6 +194,8 @@
 
     "@react-spring/core": ["@react-spring/core@10.0.1", "", { "dependencies": { "@react-spring/animated": "~10.0.1", "@react-spring/shared": "~10.0.1", "@react-spring/types": "~10.0.1" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-KaMMsN1qHuVTsFpg/5ajAVye7OEqhYbCq0g4aKM9bnSZlDBBYpO7Uf+9eixyXN8YEbF+YXaYj9eoWDs+npZ+sA=="],
 
+    "@react-spring/parallax": ["@react-spring/parallax@10.0.1", "", { "dependencies": { "@react-spring/shared": "~10.0.1", "@react-spring/web": "~10.0.1" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-1JfestfZvTMTFHNkwKQlTiTTrc4wJXEAVkxg1Bcx+B6KzF7dfHMXQQmsRJc/KvNNpMPALtwP8xqIpq5kV1MjrA=="],
+
     "@react-spring/rafz": ["@react-spring/rafz@10.0.1", "", {}, "sha512-UrzG/d6Is+9i0aCAjsjWRqIlFFiC4lFqFHrH63zK935z2YDU95TOFio4VKGISJ5SG0xq4ULy7c1V3KU+XvL+Yg=="],
 
     "@react-spring/shared": ["@react-spring/shared@10.0.1", "", { "dependencies": { "@react-spring/rafz": "~10.0.1", "@react-spring/types": "~10.0.1" }, "peerDependencies": { "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0" } }, "sha512-KR2tmjDShPruI/GGPfAZOOLvDgkhFseabjvxzZFFggJMPkyICLjO0J6mCIoGtdJSuHywZyc4Mmlgi+C88lS00g=="],
@@ -325,7 +328,7 @@
 
     "@vue/shared": ["@vue/shared@3.5.18", "", {}, "sha512-cZy8Dq+uuIXbxCZpuLd2GJdeSO/lIzIspC2WtkqIpje5QyFbvLaI5wZtdUjLHjGZrlVX6GilejatWwVYYRc8tA=="],
 
-    "@yelaiii/eslint": ["@yelaiii/eslint@0.0.19", "", { "dependencies": { "@antfu/eslint-config": "^5.0.0", "eslint-plugin-jsx-a11y": "^6.10.2", "eslint-plugin-perfectionist": "^4.15.0" }, "peerDependencies": { "eslint": "^9.32.0" } }, "sha512-c/ZMO8MmIQW1gLcewaEUY42zDrqtHfTUlky9lokCKaRzLPePuaRG/8vbPBrORA2gcDznlmZ8rjb+4xp4jBAssQ=="],
+    "@yelaiii/eslint": ["@yelaiii/eslint@0.0.20", "", { "dependencies": { "@antfu/eslint-config": "^5.0.0", "eslint-plugin-jsx-a11y": "^6.10.2", "eslint-plugin-perfectionist": "^4.15.0" }, "peerDependencies": { "eslint": "^9.32.0" } }, "sha512-6+Qg8OVQt5mgIQS5XdG1vGoHpw2lKgH51p/D+ILX/HiX8q+GUZ4gqoywlbC+7ub5Cv5iG0+RhKNZNdDzealiRA=="],
 
     "@yelaiii/prettier": ["@yelaiii/prettier@0.0.4", "", { "peerDependencies": { "prettier": "^3.6.2" } }, "sha512-NcKIYfORtQ/fx8N7lPyvnkpvXoD9zDfuxuiCecoKrcXvMWMF6ql7r0H6WlCqz0f4EOWyFLCv1KKbQSkGjf97dA=="],
 

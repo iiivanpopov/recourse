@@ -1,138 +1,83 @@
-import { animated } from '@react-spring/web'
+import { animated, useInView } from '@react-spring/web'
 import { FormattedMessage } from 'react-intl'
 
-import { useIntersectionRatio } from '@/shared/hooks'
-import { AnimatedButton, AnimatedGlow, AnimatedTypography } from '@/shared/ui'
+import { useInViewAnimation, useInViewAnimations } from '@/shared/hooks'
+import { Button, Typography } from '@/shared/ui'
 
-import { Section } from '../section'
-import { AnimatedReactIcon } from './components/animated-react-icon'
-import { useCtaSectionAnimation } from './hooks/useCtaSectionAnimation'
+import { AnimatedReactIcon } from './components'
 
 import styles from './CtaSection.module.css'
 
-export const CtaSection = () => {
-  const [ref, intersectionRatio] = useIntersectionRatio<HTMLDivElement>()
-  const [iconRef, iconIntersectionRatio] =
-    useIntersectionRatio<HTMLDivElement>()
+const texts: {
+  id: string
+  tag: 'div' | 'h1' | 'h2'
+  variant: 'body' | 'subtitle' | 'title'
+}[] = [
+  { tag: 'h1', variant: 'title', id: 'course.title' },
+  { tag: 'h2', variant: 'subtitle', id: 'course.subtitle' },
+  { tag: 'div', variant: 'body', id: 'course.description' }
+]
 
-  const {
-    titleTransition,
-    subtitleTransition,
-    descriptionTransition,
-    button1Transition,
-    button2Transition,
-    iconTransition,
-    glow1Transition,
-    glow2Transition
-  } = useCtaSectionAnimation(intersectionRatio, iconIntersectionRatio)
+const buttons: {
+  id: string
+  variant: 'contained' | 'outlined'
+}[] = [
+  { variant: 'contained', id: 'button.purchase_now' },
+  { variant: 'outlined', id: 'button.learn_more' }
+]
+
+export const CtaSection = () => {
+  const [ref, inView] = useInView({
+    amount: 0.4,
+    rootMargin: '-20% 0%'
+  })
+
+  const textTrail = useInViewAnimations(texts.length, inView)
+  const buttonTrail = useInViewAnimations(buttons.length, inView)
+  const reactIconSpring = useInViewAnimation(inView)
 
   return (
-    <Section className={styles.section}>
-      {glow1Transition((props, item) =>
-        item ? (
-          <AnimatedGlow
-            className={styles.blob1}
-            style={props}
-          />
-        ) : null
-      )}
-      {glow2Transition((props, item) =>
-        item ? (
-          <AnimatedGlow
-            className={styles.blob2}
-            style={props}
-          />
-        ) : null
-      )}
-
-      <div className={styles.content}>
-        <div
-          ref={ref}
-          className={styles.cta}
-        >
-          <div className={styles.text}>
-            <div className={styles.title}>
-              {titleTransition((props, item) =>
-                item ? (
-                  <AnimatedTypography
-                    variant='title'
-                    style={props}
-                    tag='h1'
-                  >
-                    <FormattedMessage id='course.title' />
-                  </AnimatedTypography>
-                ) : null
-              )}
-            </div>
-
-            <div className={styles.subtitle}>
-              {subtitleTransition((props, item) =>
-                item ? (
-                  <AnimatedTypography
-                    variant='subtitle'
-                    style={props}
-                    tag='h2'
-                  >
-                    <FormattedMessage id='course.subtitle' />
-                  </AnimatedTypography>
-                ) : null
-              )}
-            </div>
-
-            <div>
-              {descriptionTransition((props, item) =>
-                item ? (
-                  <AnimatedTypography
-                    variant='body'
-                    className={styles.body}
-                    style={props}
-                    tag='div'
-                  >
-                    <FormattedMessage id='course.description' />
-                  </AnimatedTypography>
-                ) : null
-              )}
-            </div>
-          </div>
-          <div className={styles.actions}>
-            {button1Transition((props, item) =>
-              item ? (
-                <AnimatedButton style={props}>
-                  <FormattedMessage id='button.purchase_now' />
-                </AnimatedButton>
-              ) : null
-            )}
-
-            {button2Transition((props, item) =>
-              item ? (
-                <AnimatedButton
-                  variant='outlined'
-                  style={props}
-                >
-                  <FormattedMessage id='button.learn_more' />
-                </AnimatedButton>
-              ) : null
-            )}
-          </div>
-        </div>
-
-        <div
-          ref={iconRef}
-          className={styles.iconWrapper}
-        >
-          {iconTransition((style, item) =>
-            item ? (
-              <animated.div style={style}>
-                <AnimatedReactIcon
-                  className={styles.reactIcon}
-                  delay={100}
-                  size={512}
-                />
-              </animated.div>
-            ) : null
-          )}
+    <section
+      ref={ref}
+      className={styles.section}
+    >
+      <div className={styles.cta}>
+        {textTrail.map((style, i) => (
+          <animated.div
+            key={texts[i].id}
+            style={style}
+          >
+            <Typography
+              variant={texts[i].variant}
+              tag={texts[i].tag}
+            >
+              <FormattedMessage id={texts[i].id} />
+            </Typography>
+          </animated.div>
+        ))}
+        <div className={styles.actions}>
+          {buttonTrail.map((style, i) => (
+            <animated.div
+              key={buttons[i].id}
+              style={{ ...style }}
+            >
+              <Button variant={buttons[i].variant}>
+                <FormattedMessage id={buttons[i].id} />
+              </Button>
+            </animated.div>
+          ))}
         </div>
       </div>
-    </Section>
+      <animated.div
+        className={styles.iconWrapper}
+        style={reactIconSpring}
+      >
+        <AnimatedReactIcon
+          className={styles.reactIcon}
+          delay={100}
+          inView={inView}
+        />
+      </animated.div>
+    </section>
   )
 }
