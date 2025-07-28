@@ -6,13 +6,15 @@ import { LoaderIcon } from '@/assets/icons'
 
 import styles from './Button.module.css'
 
+export type ButtonVariant = 'contained' | 'icon' | 'outlined'
+
 interface ButtonProps extends ComponentPropsWithRef<'button'> {
   children: ReactNode
   className?: string
   isActive?: boolean
   isDisabled?: boolean
   isLoading?: boolean
-  variant?: 'contained' | 'icon' | 'outlined'
+  variant?: ButtonVariant
 }
 
 export const Button = ({

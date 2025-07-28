@@ -1,15 +1,7 @@
-import type {Dispatch, ReactNode, SetStateAction} from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react'
 
 import clsx from 'clsx'
-import {
-  createContext,
-  
-  
-  
-  use,
-  useMemo,
-  useState
-} from 'react'
+import { createContext, use, useMemo, useState } from 'react'
 
 import { ArrowBottomIcon, ArrowTopIcon } from '@/assets/icons'
 import { useViewTransition } from '@/shared/hooks'
@@ -45,6 +37,7 @@ const Trigger = ({ className, withIcon, children }: TriggerProps) => {
         { [styles.withIcon]: withIcon },
         className
       )}
+      type='button'
       onClick={() => startTransition(() => setIsOpened(!isOpened))}
     >
       {children}
@@ -65,7 +58,7 @@ const Content = ({ children, className }: ContentProps) => {
   return (
     <div
       className={clsx(styles.content, { [styles.opened]: isOpened }, className)}
-      style={{ maxHeight: isOpened ? '200px' : '0' }} // Плавная анимация высоты
+      style={{ maxHeight: isOpened ? '400px' : '0' }}
     >
       {children}
     </div>

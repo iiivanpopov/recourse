@@ -1,2 +1,5 @@
+export * from './ArrowBottomIcon'
 export * from './ArrowIcon'
-export * from './rotations'
+export * from './ArrowLeftIcon'
+export * from './ArrowRightIcon'
+export * from './ArrowTopIcon'

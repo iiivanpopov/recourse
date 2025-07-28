@@ -1,30 +1,13 @@
 import { animated, useInView } from '@react-spring/web'
 import { FormattedMessage } from 'react-intl'
 
+import { CTA_BUTTONS, CTA_TEXTS } from '@/app/constants/uiElements'
 import { useInViewAnimation, useInViewAnimations } from '@/shared/hooks'
 import { Button, Typography } from '@/shared/ui'
 
-import { AnimatedReactIcon } from './components'
+import { AnimatedReactIcon } from './AnimatedReactIcon'
 
 import styles from './CtaSection.module.css'
-
-const texts: {
-  id: string
-  tag: 'div' | 'h1' | 'h2'
-  variant: 'body' | 'subtitle' | 'title'
-}[] = [
-  { tag: 'h1', variant: 'title', id: 'course.title' },
-  { tag: 'h2', variant: 'subtitle', id: 'course.subtitle' },
-  { tag: 'div', variant: 'body', id: 'course.description' }
-]
-
-const buttons: {
-  id: string
-  variant: 'contained' | 'outlined'
-}[] = [
-  { variant: 'contained', id: 'button.purchase_now' },
-  { variant: 'outlined', id: 'button.learn_more' }
-]
 
 export const CtaSection = () => {
   const [ref, inView] = useInView({
@@ -32,8 +15,8 @@ export const CtaSection = () => {
     rootMargin: '-20% 0%'
   })
 
-  const textTrail = useInViewAnimations(texts.length, inView)
-  const buttonTrail = useInViewAnimations(buttons.length, inView)
+  const textTrail = useInViewAnimations(CTA_TEXTS.length, inView)
+  const buttonTrail = useInViewAnimations(CTA_BUTTONS.length, inView)
   const reactIconSpring = useInViewAnimation(inView)
 
   return (
@@ -42,42 +25,44 @@ export const CtaSection = () => {
       className={styles.section}
     >
       <div className={styles.cta}>
-        {textTrail.map((style, i) => (
-          <animated.div
-            key={texts[i].id}
-            style={style}
-          >
-            <Typography
-              variant={texts[i].variant}
-              tag={texts[i].tag}
-            >
-              <FormattedMessage id={texts[i].id} />
-            </Typography>
-          </animated.div>
-        ))}
-        <div className={styles.actions}>
-          {buttonTrail.map((style, i) => (
+        {textTrail.map((style, i) => {
+          const text = CTA_TEXTS[i]
+          return (
             <animated.div
-              key={buttons[i].id}
-              style={{ ...style }}
+              key={text.id}
+              style={style}
             >
-              <Button variant={buttons[i].variant}>
-                <FormattedMessage id={buttons[i].id} />
-              </Button>
+              <Typography
+                variant={text.variant}
+                tag={text.tag}
+              >
+                <FormattedMessage id={text.id} />
+              </Typography>
             </animated.div>
-          ))}
+          )
+        })}
+        <div className={styles.actions}>
+          {buttonTrail.map((style, i) => {
+            const button = CTA_BUTTONS[i]
+            return (
+              <animated.div
+                key={button.id}
+                style={{ ...style }}
+              >
+                <Button variant={button.variant}>
+                  <FormattedMessage id={button.id} />
+                </Button>
+              </animated.div>
+            )
+          })}
         </div>
       </div>
-      <animated.div
-        className={styles.iconWrapper}
+      <AnimatedReactIcon
+        className={styles.reactIcon}
+        delay={100}
+        inView={inView}
         style={reactIconSpring}
-      >
-        <AnimatedReactIcon
-          className={styles.reactIcon}
-          delay={100}
-          inView={inView}
-        />
-      </animated.div>
+      />
     </section>
   )
 }

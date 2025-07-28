@@ -30,25 +30,3 @@ export const architectureSkillKeys = [
   'testing_strategy',
   'component_decomposition'
 ]
-
-export const cards: {
-  id: number
-  keys: string[]
-  skill: 'architecture' | 'react' | 'typescript'
-}[] = [
-  {
-    id: 0,
-    skill: 'react',
-    keys: reactSkillsKeys
-  },
-  {
-    id: 1,
-    skill: 'typescript',
-    keys: typescriptSkillKeys
-  },
-  {
-    id: 2,
-    skill: 'architecture',
-    keys: architectureSkillKeys
-  }
-]

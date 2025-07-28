@@ -1,6 +1,6 @@
-import type { ArrowProps } from '../ArrowIcon'
+import type { ArrowProps } from './ArrowIcon'
 
-import { ArrowIcon } from '../ArrowIcon'
+import { ArrowIcon } from './ArrowIcon'
 
 export const ArrowTopIcon = ({ style, ...props }: ArrowProps) => (
   <ArrowIcon

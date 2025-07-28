@@ -2,16 +2,16 @@ import type { MouseEventHandler } from 'react'
 
 import { useState } from 'react'
 
-import { cards } from '@/app/components/skills-section/constants'
-import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons/'
+import { SKILL_CARDS } from '@/app/constants'
+import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons'
 import { useViewTransition } from '@/shared/hooks'
 import { Button } from '@/shared/ui'
 
-import { SkillCard } from '../skill-card'
+import { SkillCard } from './SkillCard'
 
 import styles from './CardCarousel.module.css'
 
-export const CardCarousel = () => {
+export const SkillCardCarousel = () => {
   const [currentCard, setCurrentCard] = useState(0)
 
   const startTransition = useViewTransition()
@@ -32,20 +32,23 @@ export const CardCarousel = () => {
     <div className={styles.carousel}>
       <div className={styles.actions}>
         <Button
+          variant='icon'
           className={styles.navigation}
           onClick={previous}
         >
           <ArrowLeftIcon />
         </Button>
         <Button
+          variant='icon'
           className={styles.navigation}
           onClick={next}
         >
           <ArrowRightIcon />
         </Button>
       </div>
-
-      <SkillCard {...cards[currentCard]} />
+      <div className={styles.cardWrapper}>
+        <SkillCard {...SKILL_CARDS[currentCard]} />
+      </div>
     </div>
   )
 }

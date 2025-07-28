@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.card-wrapper {
+  view-transition-name: carousel;
+}
+
 .actions {
   display: flex;
   justify-content: space-between;

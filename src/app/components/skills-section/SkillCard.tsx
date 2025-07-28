@@ -4,12 +4,12 @@ import { Card, Typography } from '@/shared/ui'
 
 import styles from './SkillCard.module.css'
 
-interface ReactCardProps {
+interface SkillCardProps {
   keys: string[]
   skill: 'architecture' | 'react' | 'typescript'
 }
 
-export const SkillCard = ({ skill, keys }: ReactCardProps) => (
+export const SkillCard = ({ skill, keys }: SkillCardProps) => (
   <Card className={styles.card}>
     <Typography
       variant='heading'
