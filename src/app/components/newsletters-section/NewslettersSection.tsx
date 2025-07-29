@@ -63,10 +63,9 @@ export const NewslettersSection = () => {
       <animated.div style={trail[2]}>
         <Input
           hint={$t`input.hint.newsletters`}
-          isValid={!error && isSuccess}
           label={$t`input.label.email`}
+          valid={!error && isSuccess}
           error={error ?? undefined}
-          isError={!!error}
           onChange={onEmailChange}
           placeholder={$t`input.placeholder.email`}
         />

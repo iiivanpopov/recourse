@@ -9,11 +9,11 @@ import styles from './Button.module.css'
 export type ButtonVariant = 'contained' | 'icon' | 'outlined'
 
 interface ButtonProps extends ComponentPropsWithRef<'button'> {
+  active?: boolean
   children: ReactNode
   className?: string
-  isActive?: boolean
-  isDisabled?: boolean
-  isLoading?: boolean
+  disabled?: boolean
+  loading?: boolean
   variant?: ButtonVariant
 }
 
@@ -22,9 +22,9 @@ export const Button = ({
   className,
   type = 'button',
   variant = 'contained',
-  isDisabled = false,
-  isLoading = false,
-  isActive = false,
+  disabled = false,
+  loading = false,
+  active = false,
   ...props
 }: ButtonProps) => {
   return (
@@ -33,17 +33,17 @@ export const Button = ({
         styles.button,
         styles[variant],
         {
-          [styles.disabled]: isDisabled || isLoading,
-          [styles.active]: isActive && !(isDisabled && isLoading),
-          [styles.loading]: isLoading
+          [styles.active]: active && !(disabled && loading),
+          [styles.loading]: loading
         },
         className
       )}
+      disabled={disabled || loading}
       type={type}
       {...props}
     >
       {children}
-      {isLoading && <LoaderIcon className={styles.loadingIcon} />}
+      {loading && <LoaderIcon className={styles.loadingIcon} />}
     </button>
   )
 }

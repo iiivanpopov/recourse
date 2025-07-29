@@ -11,14 +11,13 @@ import styles from './Input.module.css'
 interface InputProps
   extends Omit<ComponentPropsWithRef<'input'>, 'onChange' | 'value'> {
   className?: string
+  disabled?: boolean
   error?: string
   hint?: string
-  isDisabled?: boolean
-  isError?: boolean
-  isLoading?: boolean
-  isValid?: boolean
   label?: string
+  loading?: boolean
   ref?: React.Ref<HTMLInputElement>
+  valid?: boolean
   value?: string
   variant?: 'ghost' | 'outlined' | 'underlined'
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
@@ -30,10 +29,9 @@ export const Input = ({
   label,
   hint,
   error,
-  isError = false,
-  isValid = false,
-  isLoading = false,
-  isDisabled = false,
+  valid = false,
+  loading = false,
+  disabled = false,
   variant = 'outlined',
   className,
   ...rest
@@ -58,26 +56,25 @@ export const Input = ({
           className={clsx(
             styles.input,
             {
-              [styles.inputError]: isError,
-              [styles.inputValid]: isValid,
-              [styles.inputLoading]: isLoading,
-              [styles.inputDisabled]: isDisabled || isLoading
+              [styles.inputError]: !!error,
+              [styles.inputValid]: valid,
+              [styles.inputLoading]: loading
             },
             {
               [styles.underlined]: variant === 'underlined',
               [styles.ghost]: variant === 'ghost'
             }
           )}
-          disabled={isDisabled || isLoading}
+          disabled={disabled || loading}
           id={id}
           value={value}
           onChange={onChange}
           {...rest}
         />
-        {isLoading && <LoaderIcon className={styles.loadingIcon} />}
+        {loading && <LoaderIcon className={styles.loadingIcon} />}
       </div>
 
-      {isError && error && (
+      {error && (
         <Typography
           variant='label'
           className={styles.error}
@@ -87,7 +84,7 @@ export const Input = ({
         </Typography>
       )}
 
-      {hint && !isError && (
+      {hint && !error && (
         <Typography
           variant='caption'
           className={styles.hint}

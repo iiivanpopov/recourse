@@ -65,15 +65,16 @@
 }
 
 /* Input states */
-.input.input-disabled {
+
+.input:disabled {
   border-color: var(--text-muted);
   color: var(--text-muted);
   background-color: var(--bg-tertiary);
   cursor: default;
 }
 
-.input.input-disabled:hover,
-.input.input-disabled:focus {
+.input:disabled:hover,
+.input:disabled:focus {
   border-color: var(--text-muted);
   color: var(--text-muted);
   background-color: var(--bg-tertiary);

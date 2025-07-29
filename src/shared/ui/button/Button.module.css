@@ -47,7 +47,7 @@
     background-color: transparent;
   }
 
-  &.disabled {
+  &:disabled {
     border-color: var(--text-tertiary);
     color: var(--text-muted);
     background-color: var(--text-tertiary);
@@ -84,7 +84,7 @@
     background-color: transparent;
   }
 
-  &.disabled {
+  &:disabled {
     border-color: var(--text-tertiary);
     color: var(--text-muted);
     background-color: var(--text-tertiary);
@@ -114,7 +114,7 @@
     background-color: var(--text-primary);
   }
 
-  &.disabled {
+  &:disabled {
     border-color: var(--text-tertiary);
     color: var(--text-muted);
     cursor: default;

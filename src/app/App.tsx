@@ -79,7 +79,7 @@ export const App = () => {
             aria-label='Scroll 1 page upwards'
             variant='icon'
             className={styles.scrollButton}
-            isDisabled={currentPage === 0}
+            disabled={currentPage === 0}
             onClick={scrollUp}
           >
             <ArrowTopIcon />
@@ -89,7 +89,7 @@ export const App = () => {
           aria-label='Scroll 1 page downwards'
           variant='icon'
           className={styles.scrollButton}
-          isDisabled={currentPage === SECTIONS_COUNT - 1}
+          disabled={currentPage === SECTIONS_COUNT - 1}
           onClick={scrollDown}
         >
           <ArrowBottomIcon />
