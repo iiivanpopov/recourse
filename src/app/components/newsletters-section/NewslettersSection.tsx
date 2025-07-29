@@ -3,8 +3,8 @@ import { useState } from 'react'
 import { FormattedMessage } from 'react-intl'
 
 import { useInViewAnimations, useTranslation } from '@/shared/hooks'
-import { v } from '@/shared/lib'
 import { Button, Input, Typography } from '@/shared/ui'
+import { v } from '@/shared/validation'
 
 import styles from './NewslettersSection.module.css'
 

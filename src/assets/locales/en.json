@@ -1,4 +1,5 @@
 {
+  "language": "Language",
   "course.title": "ReCourse",
   "course.subtitle": "ReCourse is one of the best courses",
   "course.description": "React + TypeScript course — your fast track to building powerful, reliable web apps. Master modern hooks, strong typing for safer code, and best development patterns. Learn hands-on how to create scalable interfaces and work with APIs. Perfect for developers ready to level up frontend without unnecessary theory.",
@@ -115,5 +116,7 @@
 
   "input.error.required": "This field is required",
   "input.error.email": "Please enter a valid email address",
-  "input.error.generic": "An error occurred, please try again later"
+  "input.error.generic": "An error occurred, please try again later",
+
+  "dropdown.item_list": "Dropdown item list"
 }

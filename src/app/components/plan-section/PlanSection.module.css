@@ -6,7 +6,7 @@
   max-width: 1200px;
   height: 100vh;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 .courses {
@@ -14,7 +14,7 @@
   gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   overflow-y: auto;
-  max-height: 90vh;
+  max-height: 70%;
   padding: 10px;
   view-transition-name: course;
 }
@@ -54,6 +54,14 @@
 
 .course-wrapper {
   max-height: fit-content;
+}
+
+@media (width <= 1024px) {
+  .courses {
+    padding: 25px;
+    border-radius: 10px;
+    background: var(--bg-secondary);
+  }
 }
 
 @media (width <= 768px) {

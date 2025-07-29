@@ -41,17 +41,59 @@
 }
 
 .navigation-buttons {
-  z-index: 10;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
   height: 100%;
-  padding: 20px;
+  padding: 24px 32px;
+  border-radius: 24px;
+  transition:
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.3s;
+  pointer-events: auto;
+}
+
+.language-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.language-dropdown-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-navigation-buttons {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 8px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
 @media (width <=512px) {
-  .navigation-buttons {
+  .scroll-button {
     display: none;
+  }
+
+  .language-text {
+    display: none;
+  }
+
+  .top-navigation-buttons {
+    > div {
+      > button {
+        width: fit-content;
+        min-width: 0;
+        padding: 10px;
+      }
+    }
   }
 }
