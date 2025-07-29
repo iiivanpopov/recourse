@@ -31,6 +31,15 @@
   );
 }
 
+.background4 {
+  background: linear-gradient(
+    30deg,
+    rgb(103 58 183) 0%,
+    rgb(3 169 244) 70%,
+    rgb(0 230 118) 100%
+  );
+}
+
 .navigation-buttons {
   z-index: 10;
   display: flex;

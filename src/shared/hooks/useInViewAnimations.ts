@@ -2,7 +2,7 @@ import type { UseTrailProps } from '@react-spring/web'
 
 import { useTrail } from '@react-spring/web'
 
-import { inViewAnimation } from '@/shared/animations'
+import { inViewAnimation } from '@/shared/lib/animations'
 
 export const useInViewAnimations = (
   items = 1,

@@ -2,7 +2,7 @@ import type { UseSpringProps } from '@react-spring/web'
 
 import { useSpring } from '@react-spring/web'
 
-import { inViewAnimation } from '@/shared/animations'
+import { inViewAnimation } from '@/shared/lib/animations'
 
 export const useInViewAnimation = (
   inView = false,
